@@ -1,0 +1,61 @@
+.table--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-table {
+  font-size: 13px;
+  font-family: Lato, Roboto, serif;
+  overflow: auto;
+  max-height: 500px;
+}
+
+.table--header{
+  background-color: white;
+}
+
+.mat-header-cell {
+    font-size: 16px;
+}
+
+.mat-column-thumbnail{
+  flex: 1 0 70px;
+}
+
+.mat-column-artistName{
+  flex: 3 2 150px;
+}
+
+.mat-column-trackName{
+  flex: 3 2 150px;
+}
+
+.mat-column-collectionName{
+  flex: 3 2 150px;
+}
+
+.mat-column-trackPreview{
+  flex: 1 3 165px;
+}
+
+.mat-form-field {
+  padding: 0 1em;
+  width: 100%;
+}
+
+
+
+
+audio{
+  width: 165px;
+    background-color: #95B9C7;
+ 
+    }
+
+
+
+@media screen and  (max-width: 650px) {
+  .mat-cell{
+      font-size: 10px;
+  }
+}

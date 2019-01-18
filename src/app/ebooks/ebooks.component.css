@@ -1,0 +1,81 @@
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+}
+
+.ebook {
+  font-size: 12px;
+  padding: 2em;
+  min-width: 100px;
+  width: 28vw;
+  height: 40vh;
+  overflow: hidden;
+}
+
+.ebook __header {
+  display: block;
+  height: 100px;
+  overflow: hidden;
+}
+
+.ebook __title --text {
+
+  font-size: 16px;
+  margin: 1px 0;
+
+}
+
+.ebook __author --text {
+
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 14px;
+
+}
+
+.ebook __genre --text {
+
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 12px;
+
+}
+
+.ebook __rating --text {
+
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 13px;
+
+}
+
+.ebook __image {
+  float: right;
+  padding: 0 2px;
+}
+
+.ebook __description --paragraph {
+  font-size: 13px;
+  display: block;
+  height: 150px;
+  overflow: hidden;
+
+}
+
+
+@media screen and (max-width: 650px) {
+  .ebook {
+    min-width: 80%;
+  }
+
+ .ebook __description --paragraph {
+      height: 100px;
+
+  }
+}
+

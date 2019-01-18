@@ -1,0 +1,54 @@
+<div class="table--container mat-elevation-z20">
+    <div class="table--header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search for anything here">
+      </mat-form-field>
+    </div>
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    <ng-container matColumnDef="thumbnail">
+      <mat-header-cell *matHeaderCellDef> Preview </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <img src="{{element.artworkUrl60}}" alt="thumbnail photo">
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="artistName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Artist </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.artistName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="trackName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Song </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trackName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="collectionName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Album </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.collectionName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="primaryGenreName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Genre </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.primaryGenreName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="trackPreview">
+      <mat-header-cell *matHeaderCellDef> Track </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <audio controls preload="none" volume="0.6">
+          <source src="{{element.previewUrl}}" type="audio/mp4" />
+          <p>Your browser does not support HTML5 audio.</p>
+        </audio>
+      </mat-cell>
+    </ng-container>
+
+  </mat-table>
+
+  <mat-paginator
+    [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+  </mat-paginator>
+</div>

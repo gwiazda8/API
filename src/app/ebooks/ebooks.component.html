@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="ebook" *ngFor="let ebook of ebooks; let id = index">
+    <div class="ebook__title">
+      <h3 class="ebook__title--text">{{ebook.trackName}}</h3>
+    </div>
+    <div class="ebook__header">
+      <img class="ebook__image" src="{{ebook.artworkUrl100}}" alt="Thumbnail">
+      <div class="ebook__author">
+        <p> by &nbsp;
+          <span class="ebook__author--text">{{ebook.artistName}}</span>
+        </p>
+      </div>
+      <div class="ebook__genre">
+        <p> Genre: &nbsp;
+          <span class="ebook__genre--text">{{ebook.genres[0]}}</span>
+        </p>
+      </div>
+      <div class="ebook__rating">
+        <p> User rating: &nbsp;
+          <span class="ebook__rating--text">{{ebook.averageUserRating}}</span>
+        </p>
+      </div>
+    </div>
+    <div class="ebook__description">
+      <p class="ebook__description--paragraph">{{ebook.description}}</p>
+    </div>
+  </div>
+</div>
